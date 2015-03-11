@@ -54,12 +54,13 @@ list.files()
 ##  [1] "activity.csv"               "activity.zip"              
 ##  [3] "doc"                        "figure"                    
 ##  [5] "instructions_fig"           "PA1_template - Copia.Rmd"  
-##  [7] "PA1_template.html"          "PA1_template.Rmd"          
-##  [9] "PA1_template_files"         "plot1_totalsteps.png"      
-## [11] "plot2_timeserie.png"        "plot3_totalstepsFilled.png"
-## [13] "plot4_activityDiff.png"     "README.html"               
-## [15] "README.md"                  "README.Rmd"                
-## [17] "RepData_PA1 - Copia.Rmd"    "RepData_PA1.html"
+##  [7] "PA1_template.html"          "PA1_template.md"           
+##  [9] "PA1_template.Rmd"           "PA1_template_files"        
+## [11] "plot1_totalsteps.png"       "plot2_timeserie.png"       
+## [13] "plot3_totalstepsFilled.png" "plot4_activityDiff.png"    
+## [15] "README.html"                "README.md"                 
+## [17] "README.Rmd"                 "RepData_PA1 - Copia.Rmd"   
+## [19] "RepData_PA1.html"
 ```
 
 To be sure and to take the habit, I directly check the presence of the file with the following chunk (you probably don't see any output because the file is present)
@@ -315,7 +316,7 @@ ggplot(noNAdata, aes(date, steps)) +
     labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
 ```
 
-![plot of chunk plot-totalsteps](figure/plot-totalsteps-1.png) 
+![plot of chunk plot1-totalsteps](figure/plot1-totalsteps-1.png) 
 
 #### 3. Calculate and report the mean and median of the total number of steps taken per day
 This step is performed just with 2 simple function:
@@ -546,7 +547,7 @@ ggplot(dataFilled, aes(date, steps)) +
     labs(title = "Histogram of Total Number of Steps Taken Each Day (no missing data)", x = "Date", y = "Total number of steps")
 ```
 
-![plot of chunk plot-totalsteps-Filled](figure/plot-totalsteps-Filled-1.png) 
+![plot of chunk plot3-totalsteps-Filled](figure/plot3-totalsteps-Filled-1.png) 
 
 Mean and Median for this filled data.frame are calculated as before, using *aggregate* function to subset per day and applying SUM to each group.
 
@@ -729,4 +730,4 @@ ggplot(intervalStepsFilled, aes(interval, averageSteps)) +
     facet_wrap(~ weekdays, nrow=2, ncol=1)
 ```
 
-![plot of chunk - timeseries differences](figure/- timeseries differences-1.png) 
+![plot of chunk plot4-timeseries differences](figure/plot4-timeseries differences-1.png) 

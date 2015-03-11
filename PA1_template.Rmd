@@ -1,8 +1,10 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
+title: 'Reproducible Research: Peer Assessment 1'
 author: "Davide Liperoti"
 date: "Tuesday, March 11, 2015"
-output: html_document
+output:
+  html_document:
+    self_contained: no
 ---
 ## Before starting
 This homework is over-commented, but it helps me a lot: a lot of functions and procedures are described in detail, so when I'll come back to this paper I know what I did.
@@ -137,7 +139,7 @@ Now *totalSteps* contains the global number of steps done during each day in Oct
 
 I decided to use **ggplot2** because it is more versatile and it has more funny options.
 I dont need to plot *totalSteps* because *stat* in **geom_bar(stat = "identity", ...)** takes count of VALUES, not COUNTS (using stat="bin", R try to create a preset, grouping and creating bins).
-```{r plot-totalsteps}
+```{r plot1-totalsteps}
 png(filename = "./plot1_totalsteps.png")
 # These 2 plots are identical, I just wanted to save a copy .png into Working Directory. This is my only way to achieve that result
 
@@ -264,7 +266,7 @@ tail(dataFilled)
 #### 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day.
 
 Here the code to plot to a file (./plot1_totalstepsFilled.png) and to markdown the plot with the Filled data.
-```{r plot-totalsteps-Filled}
+```{r plot3-totalsteps-Filled}
 png(filename = "./plot3_totalstepsFilled.png")
 # These 2 plots are identical, I just wanted to save a copy .png into Working Directory. This is my only way to achieve that result
 
@@ -344,7 +346,7 @@ names(intervalStepsFilled)
 ```
 
 I can now produce the plot requested using ggplot2. I have faceted by weekend and weekdays as requested.
-```{r - timeseries differences}
+```{r plot4-timeseries differences}
 png(filename = "./plot4_activityDiff.png")
 # These 2 plots are identical, I just wanted to save a copy .png into Working Directory. This is my only way to achieve that result
 ggplot(intervalStepsFilled, aes(interval, averageSteps)) + 
